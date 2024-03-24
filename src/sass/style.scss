@@ -1,6 +1,6 @@
 @use "./abstracts/variables";
 @use "./base/reset";
-@use "./base/typography";
+@use "./base/typography" as *;
 
 
 
@@ -9,9 +9,10 @@
   /////////////////////// */
 
 body {
-  font-family: var(--ff-body);
+  font-family: $font;
   font-size: var(--fs-400);
   color: var(--clr-neutral-900);
+  background-color: var(--clr-primary-100);
 }
 
 h1,
@@ -158,6 +159,12 @@ header,
   object-fit: cover;
 }
 
+.info__image {
+  width: 30%;
+  /* max-height: max(15rem, 40vh); */
+  object-fit: cover;
+}
+
 @media (min-width: 45em) {
   .hero > div {
     grid-auto-flow: column;
@@ -165,7 +172,7 @@ header,
 }
 
 .featured-articles {
-  background-color: var(--clr-primary-100);
+  background-color: var(--clr-primary-200);
 }
 
 .articles__list {
